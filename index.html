@@ -111,8 +111,8 @@
         return;
       }
 <form id="contact-form">
-  <input type="text" name="user_name" placeholder="Nome" required>
-  <input type="email" name="user_email" placeholder="Email" required>
+  <input type="text" name="name" placeholder="Nome" required>
+  <input type="email" name="email" placeholder="Email" required>
   <textarea name="message" placeholder="Messaggio" required></textarea>
   <button type="submit">Invia</button>
 </form>
@@ -125,6 +125,8 @@
   })();
 
   const form = document.getElementById('contact-form');
+document.getElementById("time").value = new Date().toLocaleString("it-IT");
+emailjs.sendForm('service_k3bdkiq', 'template_kckit88', this)
 
   form.addEventListener('submit', function(event) {
     event.preventDefault();
